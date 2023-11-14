@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            background-color: black;            
+        }
+        .clock{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: lime;
+            font-size: 60px;
+            letter-spacing: 7px;
+        }
+    </style>
+</head>
+<body>
+<div id="DigitalClock" class="clock"></div>
+<script type="text/javascript">
+    function startTime(){
+    const d = new Date();
+    let text = d.toLocaleTimeString();
+    document.getElementById("DigitalClock").innerHTML=text;
+    setTimeout(startTime,1000);
+    }
+startTime();    
+
+</script>    
+</body>
+</html>
